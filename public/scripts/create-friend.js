@@ -25,6 +25,7 @@ function createPersona() {
     .then(response => response.json())
     .then((data) => {
         createPersonaCookie(formValues, data.message, 7);
+        location.href = `${HOSTNAME}/chat`;
     })
 }
 

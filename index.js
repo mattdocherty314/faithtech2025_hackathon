@@ -20,7 +20,7 @@ app.post('/api/chat', (req, res) => {
 });
 
 app.get('/chat', (req, res) => {
-    res.send('chat');
+    res.sendFile(`${__dirname}/frontend/chat.html`);
 })
 
 // Start the server
