@@ -18,7 +18,11 @@ let sessionRoute = require('./backend/generate-session.js');
 app.use('/session', sessionRoute);
 
 app.post('/api/chat', (req, res) => {
-    res.send('test');
+    app.locals.listSessions[req.body.session].chat.push(req.body.chat);
+    res.send({
+        'type': "success",
+        'message': app.locals.listSessions[req.body.session].chat.at(-1)
+    });
 });
 
 app.get('/chat', (req, res) => {
@@ -30,4 +34,14 @@ app.listen(port, () => {
     console.log(`Server listening at http://localhost:${port}`);
 });
 
-app.locals.listSessions = new Map();
+app.locals.listSessions = {
+    "f083aea0": {
+        persona: {
+            name: "Matthew",
+            age: "25",
+            experience: "1",
+            interests: "programming and cybersecurity"
+        },
+        chat: []
+    }
+}
