@@ -3,9 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Create Your Friend</title>
+    <script src="/scripts/create-friend.js"></script>
 </head>
 <body>
-    <h1>Test</h1>
+    <h1>Tell Us About Your Friend</h1>
+    <p>Name: </p><input id="name">
+    <p>Age: </p><input id="age" type="number">
+    <p>Experience with Christianity: </p>
+    <select id="experience">
+        <option value="1">Close Family Knows</option>
+        <option value="2">Extended Family Knows</option>
+        <option value="3">Close Friends Knows</option>
+        <option value="4">Friends Know</option>
+        <option value="5">Heard Whispers</option>
+        <option value="6">Under A Rock</option>
+    </select>
+    <p>Interests: </p>
+    <textarea id="interests"></textarea>
+    <br/><button id="create">Create my Friend</button>
 </body>
 </html>

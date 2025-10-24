@@ -2,12 +2,13 @@ const express = require('express');
 const app = express();
 const port = 3000;
 
-// Define a route for the root URL ("/")
+app.use(express.static('public'));
+
 app.get('/', (req, res) => {
     res.send('Welcome');
 });
 
-app.get('/create-friend', (req, res) => {
+app.get('/friend', (req, res) => {
     res.sendFile(__dirname+'/frontend/persona.html');
 });
 
