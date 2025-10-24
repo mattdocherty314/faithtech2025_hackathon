@@ -12,6 +12,9 @@ app.get('/friend', (req, res) => {
     res.sendFile(`${__dirname}/frontend/persona.html`);
 });
 
+let sessionRoute = require('./backend/generate-session.js');
+app.use('/session', sessionRoute);
+
 app.post('/api/chat', (req, res) => {
     res.send('test');
 });
