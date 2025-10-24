@@ -20,6 +20,9 @@ function createPersona() {
 
     fetch(`${HOSTNAME}/session`, {
         method: 'POST',
+        headers: {
+            "Content-Type": "application/json"
+        },
         body: JSON.stringify(formValues)
     })
     .then(response => response.json())

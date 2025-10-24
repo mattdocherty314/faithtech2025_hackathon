@@ -3,6 +3,12 @@ var router = express.Router();
 
 router.post('/', function(req, res, next) {
     let session = generateRandomSession(8);
+    req.app.locals.listSessions.set(session, {
+        'persona': req.body,
+        'chat': []
+    });
+    console.log(req.app.locals.listSessions);
+
     res.send({
         'type': "success",
         'message': session
