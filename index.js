@@ -17,13 +17,8 @@ app.get('/friend', (req, res) => {
 let sessionRoute = require('./backend/generate-session.js');
 app.use('/session', sessionRoute);
 
-app.post('/api/chat', (req, res) => {
-    app.locals.listSessions[req.body.session].chat.push(req.body.chat);
-    res.send({
-        'type': "success",
-        'message': app.locals.listSessions[req.body.session].chat.at(-1)
-    });
-});
+let chatRoute = require('./backend/chat.js');
+app.use('/api/chat', chatRoute);
 
 app.get('/chat', (req, res) => {
     res.sendFile(`${__dirname}/frontend/chat.html`);

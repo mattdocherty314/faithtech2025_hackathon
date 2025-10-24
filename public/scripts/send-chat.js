@@ -29,7 +29,7 @@ function sendChat() {
         chat: document.getElementById("latest-chat").value
     }
 
-    chatsElement.innerHTML = `<p class=my_chats>${chatBody.chat}</p>`
+    chatsElement.innerHTML += `<p class="messages">${chatBody.chat}</p>`
     
     fetch(`${HOSTNAME}/api/chat`, {
         method: 'POST',
@@ -40,6 +40,10 @@ function sendChat() {
     })
     .then(response => response.json())
     .then((data) => {
-        chatsElement.innerHTML += `<p class=my_chats>${data.message}</p>`
+        chatsElement.innerHTML = "";
+        data.message.forEach((chat) => {
+            console.log(chat);
+            chatsElement.innerHTML += `<p class=my_chats>${chat}</p>`;
+        });
     })
 }
