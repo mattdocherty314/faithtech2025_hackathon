@@ -9,7 +9,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/friend', (req, res) => {
-    res.sendFile(__dirname+'/frontend/persona.html');
+    res.sendFile(`${__dirname}/frontend/persona.html`);
 });
 
 app.post('/api/chat', (req, res) => {
