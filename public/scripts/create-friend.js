@@ -1,7 +1,7 @@
-const HOSTNAME = "http://localhost:3000"
+const HOSTNAME = "http://localhost:3000";
 
 window.addEventListener("load", loadPage);
-let formElements = {}
+let formElements = {};
 
 function loadPage() {
     formElements = {
@@ -43,5 +43,6 @@ function createPersonaCookie(values, session, expDays) {
     const d = new Date();
     let expiryStr = `expires=${d.toUTCString(d.setTime(d.getTime() + (expDays*24*60*60*1000)))}`;
     let formStr = `value=${JSON.stringify(values)}`
-    document.cookie = `${formStr};${expiryStr}&session=${session};path='/'`;
+    document.cookie = `${formStr};${expiryStr};path='/'`;
+    document.cookie = `session=${session};${expiryStr};path='/'`;
 }
