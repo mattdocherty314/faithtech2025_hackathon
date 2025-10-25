@@ -28,6 +28,7 @@ function sendChat() {
         session: sessionID,
         chat: document.getElementById("latest-chat").value
     }
+    document.getElementById("latest-chat").value = "";
 
     chatsElement.innerHTML += `<div class="message user">${chatBody.chat}</div>`;
     chatsElement.innerHTML += `<div class="message bot">Thinking...</div>`;

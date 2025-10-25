@@ -1,3 +1,5 @@
 package-lock.json
 node_modules*
 .env
+public/test.html
+*.mp4

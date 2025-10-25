@@ -7,7 +7,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.get('/', (req, res) => {
-    res.send('Welcome');
+    res.sendFile(`${__dirname}/frontend/home.html`);
 });
 
 app.get('/friend', (req, res) => {
@@ -30,13 +30,13 @@ app.listen(port, () => {
 });
 
 app.locals.listSessions = {
-    "f083aea0": {
-        persona: {
-            name: "Matthew",
-            age: "25",
-            experience: "1",
-            interests: "programming and cybersecurity"
-        },
-        chat: []
-    }
-}
+    // "f083aea0": {
+    //     persona: {
+    //         name: "Matthew",
+    //         age: "25",
+    //         experience: "1",
+    //         interests: "programming and cybersecurity"
+    //     },
+    //     chat: []
+    // }
+};
