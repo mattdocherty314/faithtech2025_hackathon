@@ -29,8 +29,8 @@ function sendChat() {
         chat: document.getElementById("latest-chat").value
     }
 
-    chatsElement.innerHTML += `<p class="messages">${chatBody.chat}</p>`;
-    chatsElement.innerHTML += `<p class="messages">Thinking...</p>`;
+    chatsElement.innerHTML += `<div class="message user">${chatBody.chat}</div>`;
+    chatsElement.innerHTML += `<div class="message bot">Thinking...</div>`;
     
     fetch(`${HOSTNAME}/api/chat`, {
         method: 'POST',
@@ -42,9 +42,9 @@ function sendChat() {
     .then(response => response.json())
     .then((data) => {
         chatsElement.innerHTML = "";
-        data.message.forEach((chat) => {
+        data.message.forEach((chat,i) => {
             console.log(chat);
-            chatsElement.innerHTML += `<p class=my_chats>${chat}</p>`;
+            chatsElement.innerHTML += `<div class="message ${(i%2==0)?'user':'bot'}">${chat}</div>`;
         });
     })
 }

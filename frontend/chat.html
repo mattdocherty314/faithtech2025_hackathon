@@ -5,11 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chat</title>
     <script src="/scripts/send-chat.js"></script>
+    <link rel="stylesheet" href="/styles/chat.css">
 </head>
 <body>
-    <h1>Now Practice Sharing Your Testimony</h1>
-    <div id="chat">
+    <header>Now Practice Sharing Your Testimony</header>
+    <div class="chat-container">
+        <div class="messages" id="chat">
+        </div>
+        <div class="input-area">
+            <input type="text" id="latest-chat" placeholder="Type your message...">
+            <button id="send-chat">Send</button>
+        </div>
     </div>
-    <input id="latest-chat"><button id="send-chat">Send</button>
 </body>
 </html>
