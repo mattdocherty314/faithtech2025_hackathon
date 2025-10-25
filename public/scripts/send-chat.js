@@ -29,7 +29,8 @@ function sendChat() {
         chat: document.getElementById("latest-chat").value
     }
 
-    chatsElement.innerHTML += `<p class="messages">${chatBody.chat}</p>`
+    chatsElement.innerHTML += `<p class="messages">${chatBody.chat}</p>`;
+    chatsElement.innerHTML += `<p class="messages">Thinking...</p>`;
     
     fetch(`${HOSTNAME}/api/chat`, {
         method: 'POST',
